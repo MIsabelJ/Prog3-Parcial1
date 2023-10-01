@@ -28,6 +28,7 @@ public class Libro extends Base {
     @Column(name = "paginas")
     private int paginas;
 
+    // Relacion con Autor
     @ManyToMany(cascade = CascadeType.REFRESH)
     private List<Autor> autores = new ArrayList<Autor>();
 

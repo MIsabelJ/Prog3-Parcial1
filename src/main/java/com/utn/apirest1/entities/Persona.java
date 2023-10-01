@@ -15,7 +15,6 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-//@Audited
 
 public class Persona extends Base {
 
@@ -26,10 +25,12 @@ public class Persona extends Base {
     @Column(name = "dni")
     private int dni;
 
+    // Relacion con Domicilio
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
 
+    // Relacion con Libro
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(
             name = "persona_libro",
